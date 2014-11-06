@@ -3,17 +3,21 @@ package com.example.ziyang0621.funfacts;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
 
 public class FunFactsActivity extends Activity {
+
+    public static final String TAG = FunFactsActivity.class.getSimpleName();
 
     private FactBook mFactBook = new FactBook();
     private ColorWheel mColorWheel = new ColorWheel();
@@ -42,6 +46,9 @@ public class FunFactsActivity extends Activity {
             }
         };
         showFactButton.setOnClickListener(listener);
+
+        Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "We're logging from the onCreate() method!");
     }
 
 }
